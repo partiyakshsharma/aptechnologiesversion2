@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="head-section rg-bg-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="headconent">
+                    <div class="navitagion">
+                        <ul class="list-h-styled mb30">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">Blogs Page</li>
+                        </ul>
+                    </div>
+                    <h1 class="mb0">Read Our Most Recent Tech News and Blog.</h1>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+</div>
+
+<section class="sec-pad pt50">
+    <div class="container">
+        <div class="row" data-cues="slideInUp" data-delay="100">
+            {% for blog in page_obj %}
+            <div class="col-lg-3 col-md-6 mt30">
+                <div class="blogcard shadow bchov">
+                    <div class="blogimgs roundimg">
+                        <a href="{% url 'blog_detail' blog.slug %}" class="port_overlay"></a>
+                        <img src="{{ blog.image.url }}" alt="img">
+                    </div>
+                    <div class="blogdata mt20">
+                        <div class="mb10">
+                            {% for category in blog.categories.all %}
+                            <a href="#">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        <h4><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></h4>
+                        <p class="mb10 f14">Editorial Team,{{ blog.author }}, {{ blog.published_date|date:"d M Y" }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="paginationdiv mt60">
+                    <ul class="pagination shadow">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="prev">&#60; Prev</a></li>
+                        {% else %}
+                        <li class="disabled"><span class="prev">&#60; Prev</span></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="pagenumber active"><a href="#">{{ num }}</a></li>
+                        {% else %}
+                        <li class="pagenumber"><a href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="next">Next &#62;</a></li>
+                        {% else %}
+                        <li class="disabled"><span class="next">Next &#62;</span></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

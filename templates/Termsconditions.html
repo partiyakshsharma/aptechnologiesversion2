@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Terms and Conditions{% endblock %}
+{% block content %}
+<div class="head-section rg-bg-2">
+    <div class="container">
+        <div class="row align-end">
+            <div class="col-lg-7">
+                <div class="headcontent">
+                    <div class="navigation">
+                        <ul class="list-h-styled mb30">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">Terms and Conditions</li>
+                        </ul>
+                    </div>
+                    <h1 class="mb0">Terms and Conditions ✶</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="policy-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Introduction</h2>
+                <p>Welcome to the Terms and Conditions page of AP Technologies. These terms govern your use of our website and services. By accessing or using our site, you agree to comply with and be bound by these terms.</p>
+
+                <h2>Acceptance of Terms</h2>
+                <p>By using our website and services, you agree to these Terms and Conditions. If you do not agree, you must not use our site. We may update these terms periodically, and your continued use of the site constitutes acceptance of the updated terms.</p>
+
+                <h2>Use of Our Services</h2>
+                <p>You are granted a limited, non-exclusive, non-transferable license to access and use our site and services for personal and professional use. You agree not to:</p>
+                <ul class="policy-list">
+                    <li>Engage in any activity that disrupts or interferes with our services.</li>
+                    <li>Use the site for any unlawful or unauthorized purposes.</li>
+                    <li>Attempt to gain unauthorized access to our systems or accounts.</li>
+                </ul>
+
+                <h2>Intellectual Property</h2>
+                <p>All content and materials on our website, including text, images, and logos, are the property of AP Technologies and are protected by copyright and intellectual property laws. You may not use, reproduce, or distribute any content without our explicit consent.</p>
+
+                <h2>Limitation of Liability</h2>
+                <p>AP Technologies' liability to you is limited to the maximum extent permitted by law. We are not liable for any indirect, incidental, or consequential damages arising from your use of our site or services.</p>
+
+                <h2>Indemnification</h2>
+                <p>You agree to indemnify and hold harmless AP Technologies and its affiliates from any claims, liabilities, damages, losses, or expenses arising from your use of our site or violation of these terms.</p>
+
+                <h2>Governing Law</h2>
+                <p>These Terms and Conditions are governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising from these terms will be resolved in the courts of [Your Jurisdiction].</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions or concerns about these Terms and Conditions, please contact us at [Your Contact Information]. We are here to help with any issues or inquiries you may have.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .policy-content {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+    }
+    .policy-content h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #222;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .policy-content p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 20px;
+    }
+    .policy-list {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    .policy-list li {
+        margin-bottom: 10px;
+    }
+    .row {
+        margin-bottom: 30px;
+    }
+    .head-section {
+        padding: 60px 0;
+        background-color: #333;
+        color: #fff;
+    }
+    .head-section h1 {
+        font-size: 40px;
+        color: #fff;
+    }
+    .head-section .navigation ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .head-section .navigation ul li.active {
+        font-weight: bold;
+    }
+
+    .separatewebhranimation {
+        margin-top: 40px;
+    }
+    .marquee__inner {
+        border-top: 2px solid #333;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+        background-size: 200% 100%;
+        animation: marquee 1.5s linear infinite;
+    }
+    @keyframes marquee {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 0; }
+    }
+</style>
+{% endblock %}

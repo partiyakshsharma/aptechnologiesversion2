@@ -1,0 +1,717 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% load  static %}
+{% block content %}
+      <section class="demo-5-hero rg-bg-za">
+         <div class="container">
+            <div class="row vcenter justify-content-between">
+               <div class="col-lg-6">
+                  <div class="hero-content">
+                     <span class="subtitleheading" data-cue="slideInUp" data-delay="100">✦ We Provide CUSTOM Service</span>
+                     <h1 class="cd-headline rotate-1" data-cue="slideInUp" data-delay="400"> We Create. Design. Develop. <span class="cd-words-wrapper"> <b class="is-visible">Web Design</b> <b>App Design</b> <b>Logo Design
+                     </b> </span> </h1>
+                     <p class="mt30" data-cue="slideInUp" data-delay="600">Explore how our innovative web and app development solutions can transform your ideas into cutting-edge digital experiences. From building user-friendly websites to developing powerful mobile applications, our expertise will help you achieve your digital goals with precision and creativity.</p>
+
+                     <div class="pair-btn mt30" data-cues="slideInUp" data-delay="800">
+                        <a href="{% url 'contactus'%}" class="r-g-btn r-g-btn-8">Get Started </a>
+                        <a href="{% url 'about'%}" class="inine-btn">How It Works</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 mmt40">
+                  <div class="sol-img" data-cue="slideInRight" data-delay="500">
+                     <img src="{% static 'images/1.png' %}" alt="img">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- // -->
+{% comment %} 
+  <style>
+    .brands-sets {
+        margin-bottom: 40px;
+    }
+    .brands-sets h2 {
+        text-align: center;
+        margin-bottom: 30px; /* Adjust as needed */
+    }
+    .logo--inner-div img {
+        width: 150px;  /* Adjust the width as needed */
+        height: 100px; /* Adjust the height as needed */
+        object-fit: contain; /* Ensures the image maintains aspect ratio */
+        display: block;
+        margin: 0 auto;
+    }
+</style> {% endcomment %}
+
+<!-- Brand section -->
+{% comment %} <div class="brands-sets">
+    <div class="container">
+        <div class="row mt60">
+            <div class="col-md-12">
+                <!-- Heading for the logo designs -->
+                <h2>Logo Designs</h2>
+                <div class="logo---set owl-carousel">
+                    {% for brand in brands %}
+                    <div class="logo--inner-div">
+                        <img src="{{ brand.logo.url }}" alt="{{ brand.name }}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+
+
+      <!-- // -->
+       {% comment %} why choose us section {% endcomment %}
+      <!-- block -->
+<section class="portfolio-home sec-pad sw-bg-2-wave">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center text-white">
+                <h2>Why You Should Choose AP Technologies</h2>
+                <p>At AP Technologies, we craft modern web and mobile applications, design compelling logos, and ensure your digital assets are secure and well-maintained.</p>
+            </div>
+        </div>
+        <div class="row mt30">
+            <div class="col-lg-8 col-md-12 mt30 padding-right-80">
+                <div class="img-card-big-video roundimg">
+                   
+                        <div class="video-button">  </div>
+                        <img src="{% static 'images/AP.png'%}" alt="img" class="w-100">
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mt30 mmt40">
+                <div class="sw-icon-line-media-ojbct text-white" data-cues="slideInRight" data-delay="200">
+                    <div class="media">
+                        <div class="bsicon"><img src="{% static 'images/icons/graphic-designer.png'%}" alt="img"></div>
+                        <div class="bstext">
+                            <h4>Innovative Web & App Development</h4>
+                            <p>We build cutting-edge web and mobile applications tailored to your business needs, ensuring a seamless user experience and optimal performance.</p>
+                        </div>
+                    </div>
+                    <div class="media mt40">
+                        <div class="bsicon"><img src="{% static 'images/icons/binary-code.png'%}" alt="img"></div>
+                        <div class="bstext">
+                            <h4>Professional Logo Design</h4>
+                            <p>Our design team specializes in creating unique and impactful logos that resonate with your brand identity and leave a lasting impression.</p>
+                        </div>
+                    </div>
+                    <div class="media mt40">
+                        <div class="bsicon"><img src="{% static 'images/icons/meda2.png'%}" alt="img"></div>
+                        <div class="bstext">
+                            <h4>Security and Maintenance</h4>
+                            <p>AP Technologies provides comprehensive security solutions and ongoing maintenance to ensure your digital assets are protected and operate smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} services section 1 {% endcomment %}
+
+<section class="sec-pad position-relative rg-bg-0">
+    <img src="{% static 'images/shape/shape-1.png' %}" class="shape11 imshp" alt="#">
+    <img src="{% static 'images/shape/shape-2.png' %}" class="shape22 imshp" alt="#">
+    <div class="container index-up">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Customized On Demand <span class="light-et">Web & App Development</span> Services</h2>
+                <p class="mt15">We are a Web development company. We provide web design, app development, and digital marketing services.</p>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+
+        <div class="row mt30 swcards">
+            {% if services %}
+                {% for service in services %}
+                <div class="col-lg-4 col-md-6 mt30">
+                    <div class="r-g-card shadow cardbg swhovr" 
+                         {% if service.background_image %}
+                             style="background-image: url('{{ service.background_image.url }}');"
+                         {% else %}
+                             style="background-color: 'white';" 
+                         {% endif %}>
+                        <div class="pair-btwn">
+                            <div class="imagesicons">  
+                                <img src="{{ service.icon.url }}" alt="{{ service.title }} icon">  
+                            </div>
+                            <div class="cardlabl">
+                                <p><span>Price</span> {{ service.price }}</p>
+                            </div>
+                        </div>
+                        <div class="card-usefor">
+                            <h3>{{ service.title }}</h3>
+                            <p class="mt10">{{ service.description }}</p>
+                        </div>
+                        {% comment %} <a href="#" class="inine-btn">Read More</a> {% endcomment %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-lg-12 mt30">
+                    <p>No services available at the moment.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- technology slider -->
+    <div class="technology-slider owl-carousel mt100">
+        {% if technologies %}
+            {% for tech in technologies %}
+            <div class="iconslider">
+                <div class="icon-with-title">
+                    <a href="javascript:void(0)">
+                        <div class="iwt-icon"> 
+                            <img src="{{ tech.icon.url }}" alt="{{ tech.name }}"> 
+                        </div>
+                        <div class="iwt-content">
+                            <p>{{ tech.name }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-lg-12 mt30">
+                <p>No technologies available at the moment.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+
+     <!-- // -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+      <!-- block -->
+<section class="sec-pad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 paragraph">
+        <span class="subtitleheading">✦ Who We Are</span>
+        <h2 class="font-2">Kickstart your project with Rundal creative service.</h2>
+        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> {% endcomment %}
+      </div>
+    </div>
+    <div class="row mt30" data-cues="slideInUp" data-delay="200">
+      {% for service in servicess %}
+      <div class="col-lg-4 col-md-6 mt30 tilt3d">
+        <div class="iconblockcard r-g-card shadow tilt-img" data-tilt data-tilt-max="10" data-tilt-speed="2000" data-tilt-glare data-tilt-max-glare="0.2">
+          <div class="iconblock tilt-end">
+            <img src="{{ service.icon1.url }}" alt="img">
+          </div>
+          <div class="icondata mt20 tilt-end">
+            <h4>{{ service.title1 }}</h4>
+            <p>{{ service.description1 }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+     <!-- block -->
+
+
+
+
+      <!-- cta skew -->
+      {% comment %} <section class="cta-sw-skew mb60">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-12">
+                 <div class="ctapairskew">
+                    <div class="ctapair-skew" data-cue="slideInLeft" data-delay="100">
+                       <div class="skew-sw-half rg-bg-4 skew-sw-left"></div>
+                       <div class="skew-sw-div rg-bg-4"></div>
+                       <div class="ctapaircontent">
+                          <h3 class="mb15">Are You Planning To Redesign Your Agency's Website?</h3>
+                          <a href="https://www.templatemonster.com/website-templates/rundal-modern-multi-purpose-html5-template-287150.html" class="r-g-btn r-g-btn-7 mt30"> Purchase Now <i class="fa-solid fa-cart-shopping"></i></a>
+                       </div>
+                    </div>
+                    <div class="ctapair-skew" data-cue="slideInRight" data-delay="300">
+                       <div class="skew-sw-half rg-bg-5 skew-sw-right"></div>
+                       <div class="skew-sw-div rg-bg-5"></div>
+                       <div class="ctapaircontent">
+                          <h3 class="mb15">Need Support? Connect With Us Via TemplateMonster Support Ticket System.</h3>
+                          <a href="https://www.templatemonster.com/website-templates/rundal-modern-multi-purpose-html5-template-287150.html" class="r-g-btn r-g-btn-1 mt30">Contact Us Now </a>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section> {% endcomment %}
+     <!-- cta skew -->
+
+
+      <!-- customer review -->
+      <!-- customer review -->
+<section class="sec-pad sw-bg-2-wave">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6 text-white">
+                <h2>Meet our team</h2>
+                {% comment %} <p>Get inspired by these stories.</p> {% endcomment %}
+            </div>
+        </div>
+        <div class="row mt60">
+            <div class="col-lg-12">
+                <div class="testimonial-slider-- owl-carousel">
+                    {% for review in customer_reviews %}
+                    <div class="reviewcard">
+                        <div class="r-g-card shadow">
+                            <div class="reviewer-with-source media">
+                                <div class="reviewer-info media">
+                                    <div class="reviewerimg">
+                                        <img src="{{ review.image.url }}" alt="{{ review.name }}">
+                                    </div>
+                                    <div class="reviewrdata">
+                                        <h5>{{ review.name }}</h5>
+                                        <p>{{ review.position }}</p>
+                                    </div>
+                                </div>
+                                <div class="reviewsource"><i class="fa-solid fa-quote-right f45"></i></div>
+                            </div>
+                            <div class="review-content mt20">
+                                <p class="mt10">{{ review.review_text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="row mt60 justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h3 class="text-white">Read more real reviews on the internet</h3>
+                <div class="review-linkss" data-cues="slideInUp" data-delay="200">
+                    <a href="#"><img src="{% static 'images/icons/Google-Reviews.png' %}" alt="Google Reviews"> </a> 
+                     <a href="#"><img src="{% static 'images/icons/instagram.png' %}" alt="instagram Reviews"> </a>        
+                    <a href="#"><img src="{% static 'images/icons/fbreview.png' %}" alt="Facebook Reviews"> </a>                                                             
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</section>
+
+
+
+
+      <!-- customer review -->
+<section class="customer-reviews sec-pad">
+    <div class="container">
+        <div class="row vcenter">
+            <div class="col-lg-5">
+                <span class="subtitleheading">✦ Testimonials</span>
+                <h2>We Treat Our Clients Like Business Partners</h2>
+                <p class="mt15">Every client at AP Technologies has a close relationship with one of our developers. The entire process is tailored to the client, and we only take on a client if we believe we can thrive together.</p>
+                <h4 class="mt60">Read more real reviews on the internet</h4>
+                <div class="review-links" data-cues="slideInUp" data-delay="200">
+                   {% load static %}
+
+<a href="#"><img src="{% static 'images/icons/Google-Reviews.png' %}" alt="Google Reviews"> </a>
+  <a href="#"><img src="{% static 'images/icons/instagram.png' %}" alt="instagram Reviews"> </a>  
+<a href="#"><img src="{% static 'images/icons/fbreview.png' %}" alt="Facebook Reviews"> </a>
+
+                </div>
+            </div>
+            <div class="col-lg-6 position-relative padding-left-80 mmt40">
+                <div class="customNavigation customplace1">
+                    <a class="btn customNextBtn" data-cue="zoomIn" data-delay="100"><i class="fa-solid fa-arrow-left-long"></i></a>
+                    <a class="btn customPreviousBtn" data-cue="zoomIn" data-delay="400"><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+                <div class="review-slider owl-carousel dot-image p-0">
+                    {% for testimonial in testimonials %}
+                    <div class="reviews-cards">
+                        <div class="reviewcard">
+                            <div class="reviewerrimg">
+                                <img src="{{ testimonial.client_image.url }}" alt="{{ testimonial.client_name }}" class="roundimg">
+                            </div>
+                            <div class="reviewcontent shadow">
+                                <div class="star-rate">
+                                    <ul>
+                                        {% for i in "12345" %}
+                                        <li>
+                                            {% if forloop.counter <= testimonial.rating %}
+                                            <a href="javascript:void(0)" class="chked">
+                                            {% else %}
+                                            <a href="javascript:void(0)">
+                                            {% endif %}
+                                                <i class="fa-solid fa-star"></i>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="review-text">
+                                    <p>{{ testimonial.review }}</p>
+                                </div>
+                                <div class="reviewer-text">
+                                    <h4>{{ testimonial.client_name }}</h4>
+                                    <p>{{ testimonial.client_business }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+     
+
+      <!-- cta block -->
+      <div class="container mb100">
+        <div class="cta-block shadow cta-bg" data-background="images/shape/cta-bg-1.svg">
+           <div class="row">
+              <div class="col-lg-12">
+                 <div class="divblockcta">
+                    <div class="cta-textblock">
+                       <h2>Get a Digital Solution For Your Company That is Made Just For You.</h2>
+                       <a href="{% url 'contactus'%}" class="r-g-btn r-g-btn-1 mt30 mt30">Contact us now</a>
+                    </div>
+                    <div class="ctaimgblock">
+                       <p>We have a skilled tech-savvy team of developers that works on clients' projects efficiently and delivers the project right on time.</p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- // -->
+     
+
+
+      <!--feature block -->
+      <section class="sec-pad innerheadbg bg-fixd" data-background="{% static 'images/common/section-bg.jpg'%}">
+         <div class="container index-up">
+            <div class="row vcenter justify-content-between">
+               <div class="col-lg-6 text-white">
+                  <h2 data-cue="slideInUp" data-delay="100">Why Customers choose Us?</h2>
+                  <ul class="ullist check mt30" data-cues="slideInUp" data-delay="100">
+                     <li>Flexible engagement models</li>
+                     <li>24×7 Support </li>
+                     <li>Competitive pricing & ontime delivery</li>
+                     <li>Fully Customized designs</li>
+                     <li>Strong technology competency</li>
+                     <li>Seamless communication</li>
+                  </ul>
+               </div>
+               <div class="col-lg-4 mmt40">
+                  <div class="coutner-set-2 text-white" data-cues="zoomIn" data-delay="400">
+                     <div class="counterdiv">
+                        <p class="rg-num"><span>2</span>+</p>
+                        <p>Years of<br> Experience</p>
+                     </div>
+                     <div class="counterdiv">
+                        <p class="rg-num"><span>10</span>+</p>
+                        <p>Team<br> Members</p>
+                     </div>
+                     <div class="counterdiv">
+                        <p class="rg-num"><span>100</span>%</p>
+                        <p>Customer<br> Satisfaction</p>
+                     </div>
+                     {% comment %} <div class="counterdiv">
+                        <p class="rg-num"><span>20</span>+</p>
+                        <p>projects<br> Done</p>
+                     </div> {% endcomment %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- // -->
+
+
+
+
+
+
+
+
+
+
+      <!-- portfolio block -->
+     <!-- portfolio block -->
+<!-- portfolio block -->
+<style>
+    .work-imags a img {
+        width: 50%;
+    }
+    .brand-logo {
+        width: 150px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+
+    .btn-primary {
+        background-image: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+        color: #fff; /* White text */
+        border: none; /* Remove border */
+        border-radius: 25px; /* Rounded corners */
+        padding: 10px 20px; /* Padding inside button */
+        font-size: 16px; /* Font size */
+        text-transform: uppercase; /* Uppercase text */
+        font-weight: bold; /* Bold text */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+    }
+
+    .btn-primary:hover {
+        background-image: linear-gradient(135deg, #2575fc, #6a11cb); /* Reversed gradient on hover */
+        transform: translateY(-3px); /* Slight lift effect */
+    }
+
+    .btn-primary:focus, .btn-primary:active {
+        outline: none; /* Remove outline */
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3); /* Focus shadow */
+    }
+</style>
+
+<section class="sec-pad">
+    <div class="container">
+            <div class="text-center mb40">
+            <h2 class="section-heading">Our Logo Designs</h2>
+            <p class="section-subheading">A selection of our featured brand logos.</p>
+        </div>
+
+        <div class="row isotope-items-wrap">
+            {% for brand in brands %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mt30 isotope-item hover-effect">
+                <div class="our-works">
+                    <div class="work-imags roundimg">
+                        <a href="#">
+                            <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" class="card-img-round brand-logo">
+                        </a>
+                    </div>
+                    <div class="infoblocis">
+                        <div class="nameofitem">
+                            <h3>{{ brand.name }}</h3>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Show more button -->
+        <div class="text-center mt30">
+            <a href="{% url 'all_brands' %}" class="btn btn-primary">Show More</a>
+        </div>
+    </div>
+</section>
+
+
+
+      <!-- // -->
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- blog blocks -->
+    <div class="bloghomediv sec-pad rg-bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="subtitleheading">✦ Latest from Blog</span>
+                <h2>We Love To Share Our Learnings</h2>
+            </div>
+        </div>
+        <div class="row mt30" data-cues="slideInUp" data-delay="100">
+            {% for blog in latest_blogs %}
+            <div class="col-lg-6 mt30">
+                <div class="half-blog-card swhovr">
+                    <div class="half-blog-img">
+                        <a href="{% url 'blog_detail' blog.slug %}">
+                            <img src="{{ blog.image.url }}" alt="blogs" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="half-blog-content">
+                        <div class="blog-quick-inf mb15">
+                            <span>{{ blog.published_date|date:"d M Y" }}</span> 
+                            <span>5 Min Read</span>
+                        </div>
+                        <a href="{% url 'blog_detail' blog.slug %}" class="mb20 btitle">{{ blog.title }}</a>
+                        <p>{{ blog.summary }}</p>  <!-- Assuming you have a summary field or use a truncated version of the content -->
+                        <a href="{% url 'blog_detail' blog.slug %}" class="inine-btn mt20">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+      <!-- // -->
+     <!-- Feature Points -->
+    {% load static %}
+
+<section class="why-choose-us sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>More reasons companies around the world choose AP Technologies</h2>
+                <p class="mt15">Application Programming (AP) Technologies provide powerful frameworks, programming languages, and tools that drive modern digital transformation. With these technologies, companies can build scalable, secure, and efficient applications for diverse business needs.</p>
+            </div>
+        </div>
+        <div class="row mt30" data-cues="slideInUp" data-delay="200">
+            <div class="col-lg-3 col-md-6 mt30">
+                <div class="r-g-card rgnl1 shadow unniqbg" data-background="{% static 'images/shape/line-bg-7.svg' %}">
+                    <div class="icondiv"><img src="{% static 'images/icons/target.png' %}" alt="img"></div>
+                    <div class="datadiv">
+                        <h3><span>Target Audience</span> 20.5K</h3>
+                        <p>We provide solutions and free consultation to help identify the right technology stack for your audience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mt30">
+                <div class="r-g-card rgnl2 shadow unniqbg" data-background="{% static 'images/shape/line-bg-8.svg' %}">
+                    <div class="icondiv"><img src="{% static 'images/icons/discount.png' %}" alt="img"></div>
+                    <div class="datadiv">
+                        <h3><span>Growth in Sale</span> 98.2%</h3>
+                        <p>Our AP technologies ensure faster time-to-market, enhancing customer engagement and driving sales growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mt30">
+                <div class="r-g-card rgnl3 shadow unniqbg" data-background="{% static 'images/shape/line-bg-9.svg' %}">
+                    <div class="icondiv"><img src="{% static 'images/icons/transaction.png' %}" alt="img"></div>
+                    <div class="datadiv">
+                        <h3><span>Money Saving</span> 20.5k</h3>
+                        <p>Our solutions are cost-effective, offering long-term savings with efficient application maintenance and deployment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mt30">
+                <div class="r-g-card rgnl4 shadow unniqbg" data-background="{% static 'images/shape/line-bg-10.svg' %}">
+                    <div class="icondiv"><img src="{% static 'images/icons/marketings.png' %}" alt="img"></div>
+                    <div class="datadiv">
+                        <h3><span>Advertising Campaign</span> 75.2K</h3>
+                        <p>Utilizing data-driven advertising through AP Technologies ensures precision targeting and maximized ROI for campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <!-- // -->
+      <!--faq block-->
+      <section class="sec-pad">
+         <div class="container">
+                <!-- Content block -->
+      <section class="sec-pad rg-bg-1">
+    <div class="container">
+        <!-- block 1 -->
+        <div class="row justify-content-between vcenter">
+            <div class="col-xl-5 col-lg-5">
+                <h2 class="cd-headline zoom" data-cue="slideInUp" data-delay="100">
+                    Here is the reason Why you should
+                    <span class="cd-words-wrapper">
+                        <b class="is-visible">Choose Us</b>
+                        <b>Work with Us</b>
+                    </span>
+                </h2>
+                {% comment %} <p data-cue="slideInUp" data-delay="400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p> {% endcomment %}
+                <div class="sw-faq inn-faq mt30">
+                    <div class="accordion" id="accordionExample-001" data-cues="slideInUp" data-delay="600">
+                        <!-- Dynamic FAQ items start here -->
+                        {% for faq in faqs %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-{{ forloop.counter }}">
+                                <button class="accordion-button {% if forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq-{{ forloop.counter }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="faq-{{ forloop.counter }}">
+                                    {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div id="faq-{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading-{{ forloop.counter }}" data-bs-parent="#accordionExample-001">
+                                <div class="accordion-body">
+                                    {{ faq.answer }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Dynamic FAQ items end here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 mmt40">
+                <div class="sol-img" data-cue="slideInRight" data-delay="400">
+                    <img src="{% static 'images/common/women-working-office.png'%}" alt="img" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <div class="row mt60 justify-content-center">
+               <div class="col-lg-8">
+                  <div class="center-cta-block" data-cues="slideInUp" data-delay="100">
+                     <div class="sol-img">
+                        <img src="{% static 'images/common/developer3d.jpeg'%}" alt="img">
+                     </div>
+                     <div class="datablock">
+                        <h2>Still Have Questions?</h2>
+                        <p>Speak to our team member about your needs. Email us anytime at aptechnology2024@gmail.com</p>
+                        <a href="{% url 'contactus' %}" class="r-g-btn r-g-btn-8  mt30"> GET IN TOUCH </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- // -->
+
+
+
+      
+
+   <!-- roll text -->
+      <div class="separatewebhranimation rg-bg-x  menusw">
+         <div class="marquee__inner animation-2" aria-hidden="true">
+           
+         </div>
+      </div>
+
+
+{% endblock %}

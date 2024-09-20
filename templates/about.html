@@ -1,0 +1,471 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}about{% endblock %}
+{% load  static %}
+{% block content %}
+
+
+ <header class="rundal-header fixed-top animation header-dark">
+   <div class="container-fluid">
+      <div class="menu-header">
+         <div class="menu-logo">
+            <div class="website-logo">
+               <a href="{% url 'home' %}" class="brandlogo">
+                  <img src="{% static 'images/logo-removebg.png' %}" alt="logo" class="light">
+                  <img src="{% static 'images/logo-removebg.png' %}" alt="logo" class="dark">
+               </a>
+            </div>
+         </div>
+         <div class="rundal-nav">
+            <nav class="navbar navbar-expand-lg chead">
+               <div class="container-fluid">
+                  <div class="offcanvas offcanvas-start-lg" tabindex="-1" id="offcanvasmenu-sw" aria-labelledby="offcanvasExampleLabel">
+                     <div class="offcanvas-header d-flex d-lg-none">
+                        <div class="offcanvas-title" id="offcanvasExampleLabel"><img src="{% static 'images/logo-removebg.png' %}" alt="logo" class="sidebarlogo"></div>
+                        <a href="javascript:void(0)" class="text-reset p-0" data-bs-dismiss="offcanvas" aria-label="close">✖︎</a>
+                     </div>
+                     <div class="offcanvas-body p-lg-0">
+                        <ul class="navbar-nav">
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'home' %}">Home </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'about' %}">About us</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'services' %}">Services</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+                           </li>
+                         
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+         <div class="rundal-nav-cta">
+            <ul class="sw-menu-sw-set">
+               <li><a href="{% url 'contactus' %}" class="r-g-btn r-g-btn-2 btn-head"> contact us </a> </li>
+               <li class="sidebarmenuicon"><a href="{% url 'contactus' %}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasmenu-sw" aria-controls="offcanvasmenu-sw"><i class="fa-solid fa-bars-staggered"></i></a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</header>
+
+      <!-- Header End -->
+
+      <!-- inner pages head -->
+{% load static %}
+
+{% load static %}
+<div class="head-section rg-bg-7">
+   <div class="container">
+      <div class="row justify-content-between">
+         <div class="col-lg-6 text-white">                 
+            <div class="headconent" data-cue="slideInUp" data-delay="100">
+               <h1>Empowering Innovation Through Cutting-Edge Technology Solutions</h1>
+            </div>
+         </div>
+         <div class="col-lg-4" data-cues="slideInUp" data-delay="100">
+            <p class="text-white">At AP Technologies, we are dedicated to solving complex problems with innovative and user-centric technology solutions. Our expertise spans web and app development, ensuring that our clients receive tailored solutions that drive success and enhance their digital presence.</p>
+            <a href="{% url 'contactus' %}" class="r-g-btn r-g-btn-1 mt30"> Contact Us </a>
+         </div>
+         <div class="col-lg-12 mt80">
+            <div class="big-outline-text big-abt-hd">About Us</div>
+            <div class="gallery-slider owl-carousel head-slider-sets">
+               {% for image in images %}
+                  <div class="img-gsl roundimg">
+                     <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                  </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+      <!-- about block -->
+
+
+
+
+
+
+      
+   <section class="sec-pad sliderspacetop">
+   <div class="container">
+
+   <div class="row mt100 vcenter">
+    <div class="col-lg-6 padding-left-50">
+        <span class="subtitleheading">✦ Meet Our Founder</span>  
+         <h2 
+>Partiyaksh Sharma</h2>          
+        <h2>Empowering Your Business with Innovative Solutions</h2>
+        <p class="mt20">At AP Technologies, we specialize in providing cutting-edge technology solutions to streamline your business operations. Our team is dedicated to delivering high-quality services tailored to your needs, ensuring efficiency and growth.</p>
+        <ul class="licircle mt30" data-cues="slideInUp" data-delay="100">
+            <li>Expertise in software development, IT consulting, and digital transformation.</li>
+            <li>Customized solutions to meet your unique business requirements.</li>
+            <li>Innovative strategies to drive growth and enhance productivity.</li>
+        </ul>
+        <p class="mt20"><strong>Founded by:</strong> Partiyaksh Sharma And Anisha Garg, a visionary leader with extensive experience in the tech industry, committed to excellence and innovation.</p>
+    </div>
+    <div class="col-lg-6 mmt40">
+        <div class="single-image roundimg image-margin-left" data-cue="slideInRight" data-delay="100">
+            <img src="{% static 'images/common/founder2.jpg' %}" alt="AP Technologies">
+        </div>
+    </div>
+</div>
+      <div class="row vcenter">
+         <div class="col-lg-6">
+            <div class="single-image roundimg">
+               <img src="{% static 'images/common/founder.jpeg' %}" alt="founders of AP Technologies">
+            </div>
+         </div>
+         <div class="col-lg-6 padding-left-50 mmt40">
+            {% comment %} <span class="subtitleheading">✦ Meet Our Founder</span> {% endcomment %}
+            <h2 style="
+    margin-top: 111px;
+">Anisha Garg</h2>
+            <h2>Leading the Way at AP Technologies</h2>
+            <p class="mt20">Our founders, Anisha Garg and Partiyaksh Sharma, have built AP Technologies with the mission of delivering innovative solutions that transform the digital landscape. With a passion for technology and a commitment to excellence, they have fostered a company culture that prioritizes both client success and cutting-edge development.</p>
+            <div class="r-g-featurelist mt30" data-cues="slideInUp" data-delay="100">
+               <div class="numbermedia media">
+                  <div class="numbericons">1</div>
+                  <div class="contentfornumber">
+                     <h4>We provide innovative solutions and expert consultation tailored to your needs.</h4>
+                  </div>
+               </div>
+               <div class="numbermedia media">
+                  <div class="numbericons">2</div>
+                  <div class="contentfornumber">
+                     <h4>Our projects are delivered on time, respecting your schedule and goals.</h4>
+                  </div>
+               </div>
+               <div class="numbermedia media">
+                  <div class="numbericons">3</div>
+                  <div class="contentfornumber">
+                     <h4>We offer detailed analysis and strategic planning before starting any project.</h4>
+                  </div>
+               </div>
+               <div class="numbermedia media">
+                  <div class="numbericons">4</div>
+                  <div class="contentfornumber">
+                     <h4>All our websites are SEO optimized to ensure maximum visibility and performance.</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="company-stat sw-bg-1-wave shadow">
+               <div class="coutner-set" data-cue="zoomIn" data-delay="100">
+                  <div class="counterdiv">
+                     <h4 class="rg-num"><span>2</span>+</h4>
+                     <p>Years of<br>Experience</p>
+                  </div>
+                  <div class="counterdiv">
+                     <h4 class="rg-num"><span>10</span>+</h4>
+                     <p>Team<br>Members</p>
+                  </div>
+                  <div class="counterdiv">
+                     <h4 class="rg-num"><span>100</span>%</h4>
+                     <p>Customer<br>Satisfaction</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+
+
+
+      </div>
+   </div>
+</section>
+
+
+
+
+
+
+ <div class="head-section rg-bg-5">
+   <div class="container">
+      <div class="row vcenter justify-content-between">
+         <div class="col-lg-5">
+            <div class="headconent paragraph">
+               <span class="subtitleheading" data-cue="slideInUp" data-delay="100">✦ AP Technologies</span>
+               <h1 data-cue="slideInUp" data-delay="400">Transform Your Business with Custom Solutions</h1>
+               <h5 class="mt20" data-cue="slideInUp" data-delay="600">Empowering businesses through cutting-edge technology and innovative strategies.</h5>
+               <p class="mt20" data-cue="slideInUp" data-delay="800">At AP Technologies, we specialize in delivering custom software, web, and e-commerce solutions tailored to meet the specific needs of your business. Our goal is to drive growth, improve efficiency, and enhance customer engagement.</p>
+               <p data-cue="slideInUp" data-delay="1000">From automating workflows to building scalable e-commerce platforms, we combine industry expertise with the latest technologies to help your business thrive in the digital world. Let us guide you on your journey to innovation and success.</p>
+               <a href="{% url 'contactus' %}" class="r-g-btn r-g-btn-1 mt30" data-cue="slideInUp" data-delay="1200">Start Your Project</a>
+            </div>
+         </div>
+         <div class="col-lg-6 bg-after mmt40" data-cues="slideInRight" data-delay="100">
+            <div class="single-image roundimg shadow big-hero-img index-up">
+            <style>
+            #image1{
+    max-width: 84%;
+    height: auto;
+}
+            </style>
+               <img src="{% static 'images/common/founder3.jpg' %}" alt="AP Technologies" id="image1" class="w-100">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <section class="sec-pad">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-4">
+                <div class="position-stick">
+                    <span class="subtitleheading">✦ Leadership</span>
+                    <h2>Executive Team</h2>
+                    <p>Our leadership team couldn't work their magic without the inspiration and help of our outstanding directors and their crew.</p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row" data-cues="slideInUp" data-delay="100">
+                    {% for member in team_members %}
+                    <div class="col-lg-6 col-md-6 mt30">
+                        <div class="teamcard">
+                            <div class="roundimg shadow">
+                                <img src="{{ member.image.url }}" alt="img" class="w-100">
+                            </div>
+                            <div class="teamdata">
+                                <div class="name-position">
+                                    <h4>{{ member.name }}</h4>
+                                    <p>{{ member.position }}</p>
+                                </div>
+                                <div class="social-profile">
+                                    {% if member.twitter_url %}
+                                    <a href="{{ member.twitter_url }}"><i class="fa-brands fa-twitter"></i></a>
+                                    {% endif %}
+                                    {% if member.linkedin_url %}
+                                    <a href="{{ member.linkedin_url }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      <!-- // -->
+
+      <!-- why choose us -->
+   
+
+
+        <!-- why choose us -->
+       {% load static %}
+
+<section class="sec-pad pt0">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5 col-sm-12">
+                <div class="position-stick">
+                    <h2>Why You Should Choose Us</h2>
+                    <h5 class="mt15 italic">
+                        #1 App Development Company India. 
+                        <span class="light-et">We build Innovative</span>, 
+                        User-Friendly &amp; Results 
+                        <span class="light-et">Driven Apps.</span>
+                    </h5>
+                    <p class="mt15">
+                        At AP Technologies, we are committed to delivering top-notch web and app development solutions. Our expert team ensures each project meets the highest standards of quality and innovation, creating impactful digital experiences.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 mmt40">
+                <div class="sw-feature-list-001" data-cues="zoomIn" data-delay="100">
+                    <div class="media featurelist shadow">
+                        <div class="icon-div">
+                            <img src="{% static 'images/icons/medal.png' %}" alt="icon">
+                        </div>
+                        <div class="media-body-content">
+                            <h4>100% Guaranteed Satisfaction</h4>
+                            <p>We strive to exceed client expectations with every project, ensuring your complete satisfaction with our services.</p>
+                        </div>
+                    </div>
+                    <div class="media featurelist shadow">
+                        <div class="icon-div">
+                            <img src="{% static 'images/icons/hand.png' %}" alt="icon">
+                        </div>
+                        <div class="media-body-content">
+                            <h4>Dedicated Teams</h4>
+                            <p>Our dedicated teams are committed to your success, providing tailored solutions to meet your unique needs.</p>
+                        </div>
+                    </div>
+                    <div class="media featurelist shadow">
+                        <div class="icon-div">
+                            <img src="{% static 'images/icons/solar-energy.png' %}" alt="icon">
+                        </div>
+                        <div class="media-body-content">
+                            <h4>Focus on Innovation</h4>
+                            <p>We prioritize innovation, integrating the latest technologies and trends to keep your digital presence ahead of the curve.</p>
+                        </div>
+                    </div>
+                    <div class="media featurelist shadow">
+                        <div class="icon-div">
+                            <img src="{% static 'images/icons/creative-thinking.png' %}" alt="icon">
+                        </div>
+                        <div class="media-body-content">
+                            <h4>Creative and Innovative Solutions</h4>
+                            <p>Our creative approach ensures that every project is unique, providing innovative solutions that stand out in the marketplace.</p>
+                        </div>
+                    </div>
+                    <div class="media featurelist shadow">
+                        <div class="icon-div">
+                            <img src="{% static 'images/icons/telegram.png' %}" alt="icon">
+                        </div>
+                        <div class="media-body-content">
+                            <h4>Flexibility for Effective and Efficient Execution</h4>
+                            <p>We offer flexible solutions and efficient execution to meet your project goals and adapt to changing requirements seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <!-- // -->
+
+      <!-- timeline -->
+
+      <style>
+    .timeline__item {
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.timeline__item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.timeline__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0), rgba(255, 0, 150, 0.1), rgba(0, 204, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.timeline__item:hover::before {
+    opacity: 1;
+}
+
+.timeline__content {
+    position: relative;
+    z-index: 2;
+}
+
+      </style>
+      <section class="sec-pad rg-bg-1">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-4">
+                <div class="position-stick">
+                    <span class="subtitleheading">✦ Our story</span>
+                    <h2 class="mb0">The Road To Success Stories</h2>
+                </div>
+            </div>
+            {% comment %} <div class="col-lg-5">
+                <p class="mt15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div> {% endcomment %}
+        </div>
+
+        <div class="row mt60 justify-content-center">
+            <div class="col-xl-10 col-lg-12">
+                <div class="timeline timeline2">
+                    <div class="timeline__wrap">
+                        <div class="timeline__items">
+                            {% for event in events %}
+                                <div class="timeline__item">
+                                    <div class="timeline__content">
+                                        {% if event.year %}
+                                            <h4 class="yr">
+                                                <small class="opacity-50">{{ event.year }}</small> - {{ event.title }}
+                                            </h4>
+                                        {% else %}
+                                            <h4 class="yr">{{ event.title }}</h4>
+                                        {% endif %}
+                                        <p class="cont">{{ event.description }}</p>
+                                        <div class="roundimg mt20">
+                                            <img src="{{ event.image.url }}" alt="img" class="w-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <!-- // -->
+
+      <!-- team -->
+   
+
+      <!-- // -->
+
+      <!-- cta block -->
+      <div class="container mb100">
+         <div class="cta-block shadow cta-bg" data-background="images/shape/cta-bg-1.svg">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="divblockcta">
+                     <div class="cta-textblock">
+                        <h2>Get a Digital Solution For Your Company That is Made Just For You.</h2>
+                        <a href="{% url 'contactus' %}" class="r-g-btn r-g-btn-1 mt30 mt30">Contact Us</a>
+                     </div>
+                     <div class="ctaimgblock">
+                        <p>We have a skilled tech-savvy team of developers that works on clients' projects efficiently and delivers the project right on time.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- // -->
+
+
+   <!-- back to top -->
+   <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"> <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg>
+   </div>
+ <script src="{% static 'js/jquery.min.js'%}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+      <script src="{% static 'js/min.plugin.js'%}"></script>
+      <script src="{% static 'js/timeline.min.js'%}"></script>
+      <!--Custom Js File -->
+      <script src="{% static 'js/custom.js'%}"></script>
+
+{% endblock %}
