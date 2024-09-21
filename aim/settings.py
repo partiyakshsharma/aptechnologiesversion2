@@ -29,7 +29,7 @@ DEBUG = False
 #DEBUG = False
 
 # ALLOWED_HOSTS for production
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['aptechnologies.tech', '54.80.27.3']
 
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = ['https://aptechnologies.tech']
